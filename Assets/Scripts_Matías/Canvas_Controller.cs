@@ -47,6 +47,25 @@ public class Canvas_Controller : MonoBehaviour
         panel_Register.SetActive(false);
     }
 
+    public void Volver_Button_Play_Panel()
+    {
+        panel_LorR.SetActive(true);
+        panel_Jugar.SetActive(false);
+    }
+
+    public void Volver_Button_Login_Panel()
+    {
+        panel_LorR.SetActive(true);
+        panel_Login.SetActive(false);
+    }
+
+    public void Volver_Button_Register_Panel()
+    {
+        panel_LorR.SetActive(true);
+        panel_Register.SetActive(false);
+    }
+
+
     public void OnClickJugar()
     {
         SceneManager.LoadScene("Nivel");
