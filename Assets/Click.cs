@@ -7,7 +7,13 @@ using UnityEngine.EventSystems;
 public class Click : MonoBehaviour
 {
     public GameObject cube;
+    public Score Score;
+    public float ClickScore = 1f;
 
+    private void Start()
+    {
+        Score = GetComponent<Score>();
+    }
 
     void Update()
 
@@ -20,6 +26,7 @@ public class Click : MonoBehaviour
             if (cube == GetClickedObject(out RaycastHit hit))
 
             {
+                Score.Increment(ClickScore);
 
                 print("clicked/touched!");
 

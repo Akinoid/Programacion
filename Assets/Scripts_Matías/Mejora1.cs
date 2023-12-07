@@ -5,10 +5,14 @@ using UnityEngine;
 public class Mejora1 : MonoBehaviour
 {
 
-    public float score;
-    public float buy;
+    public Score Points;
+    public int buy;
     public float timer, maxTimer;
 
+    private void Awake()
+    {
+        Points = GetComponent<Score>();
+    }
     void Start()
     {
         maxTimer = 1;
@@ -19,7 +23,13 @@ public class Mejora1 : MonoBehaviour
         Mejora();
     }
 
-    void Mejora()
+    public void Comprar()
+    {
+        buy++;
+    }
+
+
+    public void Mejora()
     {
         if(buy > 0)
         {
@@ -27,7 +37,7 @@ public class Mejora1 : MonoBehaviour
             if(timer >= maxTimer)
             {
                 timer = 0;
-                score += 0.5f * buy;
+                Points.Increment(0.5f * buy);
 
             }
         }
