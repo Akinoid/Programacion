@@ -12,9 +12,9 @@ public class Mejora2 : MonoBehaviour
         CScore = GetComponent<Click>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpgradeClick()
     {
-        
+        CScore.ClickScore = CScore.ClickScore +1;
     }
+    
 }
