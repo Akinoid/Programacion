@@ -26,7 +26,20 @@ public class LoginUser : MonoBehaviour
             }
             else
             {
-                Debug.Log(www.downloadHandler.text);
+                int user_id;
+                if (int.TryParse(www.downloadHandler.text, out user_id))
+                {
+                    Debug.Log("Éxito en loguearse. User ID: " + user_id);
+
+                    // Almacenar el user_id como PlayerPrefs
+                    PlayerPrefs.SetInt("user_id", user_id);
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    Debug.LogError("Error al convertir el user_id: " + www.downloadHandler.text);
+                }
+
             }
         }
     }
