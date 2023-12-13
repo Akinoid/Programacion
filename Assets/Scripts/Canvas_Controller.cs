@@ -10,6 +10,7 @@ public class Canvas_Controller : MonoBehaviour
     public GameObject panel_Login;
     public GameObject panel_Register;
     public GameObject panel_LorR;
+    public GameObject panel_Credits;
     private void Awake()
     {
         panel_Jugar = transform.Find("Panel_Jugar").gameObject;
@@ -20,6 +21,8 @@ public class Canvas_Controller : MonoBehaviour
         panel_Register.SetActive(false);
         panel_LorR = transform.Find("Panel_LorR").gameObject;
         panel_LorR.SetActive(true);
+        panel_Credits = transform.Find("Panel_Credits").gameObject;
+        panel_Credits.SetActive(false);
 
     }
 
@@ -65,9 +68,22 @@ public class Canvas_Controller : MonoBehaviour
         panel_Register.SetActive(false);
     }
 
+    public void Volver_Button_Credits_Panel()
+    {
+        panel_Jugar.SetActive(true);
+        panel_Credits.SetActive(false);
+    }
+
+    public void Credits_Button()
+    {
+        panel_Credits.SetActive(true);
+        panel_Jugar.SetActive(false);
+    }
+
 
     public void OnClickJugar()
     {
         SceneManager.LoadScene("Nivel");
     }
+
 }
