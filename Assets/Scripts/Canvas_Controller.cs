@@ -43,7 +43,7 @@ public class Canvas_Controller : MonoBehaviour
 
     public void Enter_ButtonR()
     {
-        panel_Jugar.SetActive(true);
+        panel_Login.SetActive(true);
         panel_Register.SetActive(false);
     }
 
