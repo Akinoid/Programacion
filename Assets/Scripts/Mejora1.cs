@@ -6,7 +6,7 @@ public class Mejora1 : MonoBehaviour
 {
     public int precio = 20;
     public Score Points;
-    public int M1_buy;
+    public int M1_buy=0;
     public float timer, maxTimer;
 
     private void Awake()

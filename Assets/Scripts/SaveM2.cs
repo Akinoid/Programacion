@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Save : MonoBehaviour
+public class SaveM2 : MonoBehaviour
 {
+    [HideInInspector] public string serverURL = "http://localhost/Progra/Programacion/Insert_Upgrade.php";
 
-    [HideInInspector] public string serverURL = "http://localhost/Progra/Programacion/Update_Score.php";
 
-
-    public void SendScore(int user_id, float score)
+    public void SendM2(int user_id, int amount)
     {
-        StartCoroutine(UpdateScore(user_id, score));
+        StartCoroutine(UpdateM2Amount(user_id, amount));
 
     }
 
-    IEnumerator UpdateScore(int user_id, float score)
+    IEnumerator UpdateM2Amount(int user_id, int amount)
     {
         WWWForm form = new WWWForm();
         form.AddField("user_id", user_id);
-        form.AddField("score", (int)score);
+        form.AddField("upgrade_id", 2);
+        form.AddField("amount", amount);
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Progra/Programacion/Update_Score.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/Progra/Programacion/Insert_Upgrade.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -40,8 +40,5 @@ public class Save : MonoBehaviour
 
 
     }
+
 }
-
-    
-
-
