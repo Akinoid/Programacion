@@ -25,10 +25,12 @@ public class Mejora1 : MonoBehaviour
 
     public void Comprar()
     {
+        
+
         if (Points.Points >= precio)
         {
             Points.Points -= precio;
-            M1_buy++;
+            M1_buy ++;
             
         }
         else
