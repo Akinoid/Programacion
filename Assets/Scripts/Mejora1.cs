@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Mejora1 : MonoBehaviour
 {
-
+    public int precio = 20;
     public Score Points;
-    public int buy;
+    public int M1_buy;
     public float timer, maxTimer;
 
     private void Awake()
@@ -25,19 +25,29 @@ public class Mejora1 : MonoBehaviour
 
     public void Comprar()
     {
-        buy++;
+        if (Points.Points >= precio)
+        {
+            Points.Points -= precio;
+            M1_buy++;
+            
+        }
+        else
+        {
+            Debug.Log("No alcanza");
+        }
+       
     }
 
 
     public void Mejora()
     {
-        if(buy > 0)
+        if(M1_buy > 0)
         {
             timer += Time.deltaTime;
             if(timer >= maxTimer)
             {
                 timer = 0;
-                Points.Increment(0.5f * buy);
+                Points.Increment(0.5f * M1_buy);
 
             }
         }
